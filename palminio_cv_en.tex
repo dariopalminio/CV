@@ -1,187 +1,188 @@
-%%% 
-%%% Dario Palminio Curriculum Vitae
-%%%
-%%%
-%%% LaTeX Template: Designer's CV
-%%%
-%%% Source: http://www.howtotex.com/
-%%% Feel free to distribute this template, but please keep the referal to HowToTeX.com.
-%%% Date: March 2012
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Dario Palminio
+%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
 
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Document properties and packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[a4paper,12pt,final]{memoir}
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
 
-% misc
-\renewcommand{\familydefault}{bch}	% font
-\pagestyle{empty}					% no pagenumbering
-\setlength{\parindent}{0pt}			% no paragraph indentation
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
 
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
 
-% required packages (add your own)
-\usepackage{flowfram}										% column layout
-\usepackage[top=1cm,left=1cm,right=1cm,bottom=1cm]{geometry}% margins
-\usepackage{graphicx}										% figures
-\usepackage{url}											% URLs
-\usepackage[usenames,dvipsnames]{xcolor}					% color
-\usepackage{multicol}										% columns env.
-	\setlength{\multicolsep}{0pt}
-\usepackage{paralist}										% compact lists
-\usepackage{tikz}
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Create column layout
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% define length commands
-\setlength{\vcolumnsep}{\baselineskip}
-\setlength{\columnsep}{\vcolumnsep}
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 
-% frame setup (flowfram package)
-% left frame
-\newflowframe{0.2\textwidth}{\textheight}{0pt}{0pt}[left]
-	\newlength{\LeftMainSep}
-	\setlength{\LeftMainSep}{0.2\textwidth}
-	\addtolength{\LeftMainSep}{1\columnsep}
- 
-% small static frame for the vertical line
-\newstaticframe{1.5pt}{\textheight}{\LeftMainSep}{0pt}
- 
-% content of the static frame
-\begin{staticcontents}{1}
-\hfill
-\tikz{%
-	\draw[loosely dotted,color=RoyalBlue,line width=1.5pt,yshift=0]
-	(0,0) -- (0,\textheight);}%
-\hfill\mbox{}
-\end{staticcontents}
- 
-% right frame
-\addtolength{\LeftMainSep}{1.5pt}
-\addtolength{\LeftMainSep}{1\columnsep}
-\newflowframe{0.7\textwidth}{\textheight}{\LeftMainSep}{0pt}[main01]
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
 
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% define macros (for convience)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\Sep}{\vspace{1.5em}}
-\newcommand{\SmallSep}{\vspace{0.5em}}
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
 
-\newenvironment{AboutMe}
-	{\ignorespaces\textbf{\color{RoyalBlue} About me}}
-	{\Sep\ignorespacesafterend}
-	
-\newcommand{\CVSection}[1]
-	{\Large\textbf{#1}\par
-	\SmallSep\normalsize\normalfont}
-
-\newcommand{\CVItem}[1]
-	{\textbf{\color{RoyalBlue} #1}}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Begin document
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin Document
+%%% ------------------------------------------------------------
 \begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
 
-% Left frame
-%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 	\hfill
-	\includegraphics[width=0.6\columnwidth]{photo}
+	\includegraphics[width=0.2\textwidth]{photo}
 	\vspace{-7cm}
 \end{figure}
 
-\begin{flushright}\small
-	Dario Palminio \\
-	\url{dario.palminio@gmail.com}  \\
-	\url{www.palminio.com.ar} \\
-	(000) 000-0000
-\end{flushright}\normalsize
-\framebreak
+\MyName{Dario Palminio}
+\MySlogan{Curriculum Vitae}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+\PersonalEntry{Birth}{January 6, 1977}
+\PersonalEntry{Address}{5000 Cordoba, Argentina}
+\PersonalEntry{Phone}{(000) 000-0000}
+\PersonalEntry{Mail}{\url{dario.palminio@gmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+%2003 - Systems Engineer: School of Exact Sciences, UNPA-UACO National University. Graduated in 2003.
+\EducationEntry{Systems Engineer}{2003}{UNPA-UACO National University}{Systems Engineer: School of Exact Sciences, UNPA-UACO National University. Graduated in 2003.}
+\sepspace
+
+%2000, Analyst: University Analyst Programmer: School of Engineering, UNPSJB University National. Graduated in 2000.
+\EducationEntry{Analyst}{2000}{UNPSJB University National}{Analyst: University Analyst Programmer: School of Engineering, UNPSJB University National. Graduated in 2000.}
+\sepspace
+
+%1995, Electromechanical: Electromechanical technician: School ENET 1. Graduated in 1995.
+\EducationEntry{Electromechanical}{1995}{School ENET 1}{Electromechanical: Electromechanical technician: School ENET 1. Graduated in 1995.}
+\sepspace
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+
+\EducationEntry{Company}{2011-present}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
+
+\EducationEntry{Company}{2011}{job}{Description}
+\sepspace
 
 
-% Right frame
-%%%%%%%%%%%%%%%%%%%%
-\Huge\bfseries {\color{RoyalBlue} Dario Palminio} \\
-\Large\bfseries  Systems Engineer \\
 
-\normalsize\normalfont
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
 
-% About me
-\begin{AboutMe}
-(Incomplete) Add text here.
-\end{AboutMe}
+\SkillsEntry{Languages}{Dutch (mother tongue)}
+\SkillsEntry{}{English (fluent)}
+\SkillsEntry{}{German (fluent)}
 
-% Education
-\CVSection{Education}
-\CVItem{2010 - present, Lorem ipsum dolor}\\
-(Incomplete) Add text here.
-\SmallSep
+\SkillsEntry{Software}{\textsc{Matlab}, \LaTeX, \textsc{Ansys}, \textsc{Comsol}}
 
-\CVItem{2007 - 2010, Lorem ipsum dolor}\\
-(Incomplete) Add text here.
-\SmallSep
 
-\CVItem{2005 - 2007, Vivamus vel bibendum}\\
-(Incomplete) Add text here.
-\Sep
-
-% Experience
-\CVSection{Experience}
-\CVItem{May 2010 - present, Lorem ipsum}\\
-(Incomplete) Add text here.
-\SmallSep
-
-\CVItem{Aug 2007 - Feb 2010, Vivamus vel}\\
-(Incomplete) Add text here.
-\Sep
-
-% Skills
-\CVSection{Skills}
-\CVItem{Platforms}
-\begin{multicols}{3}
-\begin{compactitem}[\color{RoyalBlue}$\circ$]
-	\item Lorem 
-	\item Ipsum 
-\end{compactitem}
-\end{multicols}
-\SmallSep
-
-\CVItem{Computer software}
-\begin{multicols}{3}
-\begin{compactitem}[\color{RoyalBlue}$\circ$]
-	\item Lorem 
-	\item Ipsum 
-	\item Dolor 
-	\item Sit 
-	\item Amet
-	\item Consectetur 
-	\item Adipiscing 
-	\item Elit
-	\item \ldots
-\end{compactitem}
-\end{multicols}
-\Sep 
-
-\CVSection{Something other}
-(Incomplete) Add text here.
-
-\clearpage
-\framebreak
-\framebreak
-
-\CVSection{Something else}
-(Incomplete) Add text here.
-\Sep
-
-% References
-\CVSection{References}
-(Incomplete) Add text here.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% End document
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% References
+%%% ------------------------------------------------------------
+\NewPart{References}{}
+Available upon request
 \end{document}
