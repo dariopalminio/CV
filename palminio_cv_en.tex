@@ -70,13 +70,19 @@
 		\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value
 
+\newcommand{\CertificatesEntry}[2]{      % Same as \CertificatesEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
 		\noindent\hangindent=2em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}			   % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value	
 		
-\newcommand{\EducationEntry}[4]{
+\newcommand{\EducationEntry}[4]{ % EducationEntry
 		\noindent \textbf{#1} \hfill      % Study
 		\colorbox{Black}{%
 			\parbox{6em}{%
@@ -85,13 +91,21 @@
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
-\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+\newcommand{\WorkEntry}[4]{				  % WorkEntry Same as \EducationEntry
 		\noindent \textbf{#1} \hfill      % Jobname
 		\colorbox{Black}{\color{White}#2} \par  % Duration
 		\noindent \textit{#3} \par              % Company
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
+\newcommand{\CoursesEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+		
+		
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
@@ -154,17 +168,17 @@ I'm a Systems Engineer graduated at the “National University of Southern Patag
 \NewPart{Work experience}{}
 
 %2014-2015 Globant (globant.com) Software Engineer.
-\EducationEntry{Globant}{2015-present}{Technical Leader, Focal point and Java developer}
+\WorkEntry{Globant}{2015-present}{Technical Leader, Focal point and Java developer}
 {Technical Lead on Perl/Java Technologies in a context of LAN airline at Globant Company. The Perl Technologies used was Perl (POO with Moose, cgi, Test::Moore, Template Toolkit), MySQL, Linux, SVN, Git-Svn, CSS3, HTML5, Eclipse (RSE, EPIC), Review Board, Jenkins, etc. The Java Technologies used was SOAP, RESTful/RESTEasy, Spring, Maven, Javascript with front-end using MVC (Backbone.js). Project related to data collection from web site to send to Google Analytic.}
 \sepspace
 
 %2012-2014 IBA Entertainment limited as Software Engineer Freelancer.
-\EducationEntry{IBA Entertainment limited}{2012-2014}{Software Engineer Freelancer}
+\WorkEntry{IBA Entertainment limited}{2012-2014}{Software Engineer Freelancer}
 {Software Engineer (as Contractor Freelancer) on Perl Technologies in a context of sportsbetting (Bet3000.com). Some technologies: Perl 5, EmbPerl Object, Object Perl, JSON, RESTful, Mojolicious, Perl DBI. Development in Bet3000 Project (www.bet3000.com) to International Betting Association.}
 \sepspace
 
 %2013-2014 Make IT Coop. As Associate, Secretary
-\EducationEntry{Make IT Coop.}{2013-2014}{Associate, Secretary}{
+\WorkEntry{Make IT Coop.}{2013-2014}{Associate, Secretary}{
 Software Engineer}
 \sepspace
 
@@ -174,48 +188,70 @@ Software Engineer}
 \sepspace
 
 %2008-2010 Motorola S.C.A (Contractor Vates) as Software Engineer.
-\EducationEntry{Motorola S.C.A (Contractor Vates)}{2008-2010}{Software Engineer}
+\WorkEntry{Motorola S.C.A (Contractor Vates)}{2008-2010}{Software Engineer}
 {Java development (J2SE and J2EE in a context of telecommunications mobile devices)}
 \sepspace
 
 %2008 Vates (www.vates.com) as Systems Engineer.
-\EducationEntry{Vates}{2008}{Systems Engineer}
+\WorkEntry{Vates}{2008}{Systems Engineer}
 {Java Developer in context of system business process management.}
 \sepspace
 
 %2007 Santex America S.A. (santexgroup.com) as Software Engineer: Java Developer.
-\EducationEntry{Santex America S.A.}{2007}{Software Engineer, Java Developer}
+\WorkEntry{Santex America S.A.}{2007}{Software Engineer, Java Developer}
 {1) Java Developer in context of system business process management.}
 \sepspace
 
 %2007 AYI & Asociados (BADI S.R.L) as Software Engineer: Java Developer, Computer Consultant Java.
-\EducationEntry{AYI and Asociados (BADI S.R.L)}{2007}{Software Engineer, Java Developer, Computer Consultant Java}
+\WorkEntry{AYI and Asociados (BADI S.R.L)}{2007}{Software Engineer, Java Developer, Computer Consultant Java}
 {1) Oracle Java Developer (J2EE) in context of credit card company (Tarjeta Naranja).
 2) Instructor of "Oracle 9i: Build J2EE Applications" at InMotion, Santiago de Chile (Chile);
 3) Instructor of "Oracle AS 10g: R3 Build J2EE Applications" at Oracle, Buenos Aires (Arg.).}
 \sepspace
 
 %2006 Informatic forensics – Tribunal third in Comodoro Rivadavia City: Informatic Forensics.
-\EducationEntry{Tribunal third in Comodoro Rivadavia}{2006}{Informatic forensic}{
+\WorkEntry{Tribunal third in Comodoro Rivadavia}{2006}{Informatic forensic}{
 Tribunal third in Comodoro Rivadavia City: Forensic Engineering}
 \sepspace
 
 %2004-2006 24 months in Municipality of Comodoro Rivadavia city, Systems Engineer Juridical Informatics, Technical Leader.
-\EducationEntry{Municipality of Comodoro Rivadavia}{2004-2006}{Systems Engineer Juridical Informatics, Technical Leader}
+\WorkEntry{Municipality of Comodoro Rivadavia}{2004-2006}{Systems Engineer Juridical Informatics, Technical Leader}
 {Technical lead at Digesto Project (and VB Developer and PHP Developer) in context of legal area (Asesoría letrada) of a town hall (Municipality).}
 \sepspace
 
 %2004-2005 Teacher Mathematic Teacher, Software Teacher, Computation Teacher.
-\EducationEntry{Teacher}{2004-2005}{Teacher Mathematic Teacher, Software Teacher, Computation Teacher}
+\WorkEntry{Teacher}{2004-2005}{Teacher Mathematic Teacher, Software Teacher, Computation Teacher}
 {Profesor de Informática: 1- Computation Teacher I (Basic Informatic) - ISIS (Private Institute Third); 2- Computation Teacher II (Software Applications) - ISIS (Private Institute Third); 3- Computation Teacher III (Linux and Windows Net) - ISIS (Private Institute Third); Profesor de Software y Matemática (Mathematics and Software Teacher): 1- Course, Software Teacher: Adaptación al ambiente de trabajo en ENET 2 (technical school); 2- Course, Mathematic Teacher of 8-EGB  (two grades)- School 119 (C. R.); 3- Course, Mathematic Teacher of 9-EGB (two grades)- School 119 (C. R.).
 }
 \sepspace
 
 %2000-2003 - DeSoft Development of Software
-\EducationEntry{DeSoft}{2000-2003}{Developer, Technical Leader}{
+\WorkEntry{DeSoft}{2000-2003}{Developer, Technical Leader}{
 Developer, Technical Leader}
 \sepspace
 
+%%% Certifications
+%%% ------------------------------------------------------------
+\NewPart{Certificates}{}
+
+\CertificatesEntry{\large{\textbf{ScrumMaster}}}{}
+\CertificatesEntry{}{
+Certified ScrumMaster by SCRUM ALLIANCE.\newline
+URL ScrumMaster profile: \url{https://www.scrumalliance.org/community/profile/dpalminio}
+}
+\sepspace
+
+%%% Courses
+%%% ------------------------------------------------------------
+\NewPart{Courses in management and organization}{}
+
+\CoursesEntry{Curso de Certified Scrum Master}{2015}{Kleer, Cba.-Arg.}{}
+\CoursesEntry{Especialización en Project Management}{2010}{UTNFRBA, Bs.As.-Arg.}{}
+\CoursesEntry{Carrera de Project Management}{2008}{IAAP, PMI, Bs.As.-Arg.}{}
+\CoursesEntry{Estructuración de Proyectos PM01.}{2007}{IAAP, Bs.As.-Arg.}{}
+\CoursesEntry{Creación de Cooperativas.}{2012}{INAES, Cba.-Arg.}{}
+
+\sepspace
 
 %%% Skills
 %%% ------------------------------------------------------------
@@ -226,11 +262,6 @@ Developer, Technical Leader}
 \SkillsEntry{}{English (level 2)}
 
 \sepspace
-
-\SkillsEntry{\large{\textbf{Certifications}}}{}
-\SkillsEntry{}{
-Certified ScrumMaster by SCRUM ALLIANCE
-}
 
 \sepspace
 

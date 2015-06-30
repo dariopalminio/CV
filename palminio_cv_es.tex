@@ -70,6 +70,12 @@
 		\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value
 
+\newcommand{\CertificatesEntry}[2]{      % Same as \CertificatesEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
 		\noindent\hangindent=2em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
@@ -92,6 +98,13 @@
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
+\newcommand{\CoursesEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+		
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
@@ -150,14 +163,14 @@
 \NewPart{Experiencia laboral}{}
 
 %2014-2015 Globant (globant.com) Software Engineer.
-\EducationEntry{Globant}{2015-actual}{Technical Leader, Focal point y Java developer}
+\WorkEntry{Globant}{2015-actual}{Technical Leader, Focal point y Java developer}
 {1) Technical Lead en Perl/Java tecnologías para cuenta de LAN en empresa Globant. Las tecnologías usadas fueron: Perl (POO with Moose, cgi, Test::Moore, Template Toolkit), MySQL, Linux, SVN, Git-Svn, CSS3, HTML5, Eclipse (RSE, EPIC), Review Board, Jenkins, etc. The Java Technologies used was SOAP, RESTful/RESTEasy, Spring, Maven, Javascript with front-end using MVC (Backbone.js). Los proyectos fueron  relacionados a recolección de datos para envío a Google Analytic, gestión de promosiones y gestión de canje preferente de pasajes y usuarios Lanpass.
 2) Focal point y Desarrollador Java en proyectos de cambio de pasajes con arquitectura SOA.}
 
 \sepspace
 
 %2012-2014 IBA Entertainment limited as Software Engineer Freelancer.
-\EducationEntry{IBA Entertainment limited}{2012-2014}{Software Engineer Freelancer}
+\WorkEntry{IBA Entertainment limited}{2012-2014}{Software Engineer Freelancer}
 {Ingeniero de Software (como Freelancer/Monotributista) en tecnologías Perl para sistema de sportsbetting (Bet3000.com). Algunas tecnologías usadas: Perl 5, EmbPerl Object, Object Perl, JSON, RESTful, Mojolicious, Perl DBI. Desarrollo en el proyecto Bet3000 (www.bet3000.com) para la empresa International Betting Association.}
 
 \sepspace
@@ -169,31 +182,31 @@ Socio fundador y Secretario en Cooperativa Make IT Coop. También desarrollo en 
 \sepspace
 
 %2008-2010 Motorola Mobility as Software Engineer.
-\EducationEntry{Motorola Mobility}{2008-2010}{Software Engineer}
+\WorkEntry{Motorola Mobility}{2008-2010}{Software Engineer}
 {Ingeniero de Software en desarrollos Java (J2EE para dispositivos móviles y sistema de telecomunicaciones) en Motorola Mobility de Argentina S.A.}
 
 \sepspace
 
 %2008-2010 Motorola S.C.A (Contractor Vates) as Software Engineer.
-\EducationEntry{Motorola S.C.A (Contractor Vates)}{2008-2010}{Software Engineer}
+\WorkEntry{Motorola S.C.A (Contractor Vates)}{2008-2010}{Software Engineer}
 {Desarrollador Java (J2SE and J2EE para dispositivos móviles y sistema de telecomunicaciones)}
 
 \sepspace
 
 %2008 Vates (www.vates.com) as Systems Engineer.
-\EducationEntry{Vates}{2008}{Systems Engineer}
+\WorkEntry{Vates}{2008}{Systems Engineer}
 {Desarrollador Java para sistema de Gestión de Compras Municipal.}
 
 \sepspace
 
 %2007 Santex America S.A. (santexgroup.com) as Software Engineer: Java Developer.
-\EducationEntry{Santex America S.A.}{2007}{Software Engineer, Java Developer}
+\WorkEntry{Santex America S.A.}{2007}{Software Engineer, Java Developer}
 {1) Desarrollador Java para sistema de Gestión de Procesos de Negocio.}
 
 \sepspace
 
 %2007 AYI & Asociados (BADI S.R.L) as Software Engineer: Java Developer, Computer Consultant Java.
-\EducationEntry{AYI and Asociados (BADI S.R.L)}{2007}{Software Engineer, Java Developer, Computer Consultant Java}
+\WorkEntry{AYI and Asociados (BADI S.R.L)}{2007}{Software Engineer, Java Developer, Computer Consultant Java}
 {1) Desarrollador Java (J2EE) y Oracle para proyecto de Tarjeta Naranja.
 2) Capacitador de "Oracle 9i: Build J2EE Applications" en InMotion, Santiago de Chile (Chile);
 3) Capacitador de "Oracle AS 10g: R3 Build J2EE Applications" en oficinas de Oracle, Buenos Aires (Arg.).
@@ -202,19 +215,19 @@ Socio fundador y Secretario en Cooperativa Make IT Coop. También desarrollo en 
 \sepspace
 
 %2006 Informatic forensics – Tribunal third in Comodoro Rivadavia City: Informatic Forensics.
-\EducationEntry{Tribunal tercero de Comodoro Rivadavia}{2006}{Informático Forense}{
+\WorkEntry{Tribunal tercero de Comodoro Rivadavia}{2006}{Informático Forense}{
 Informático Forense para el tribunal tercero de Comodoro Rivadavia}
 
 \sepspace
 
 %2004-2006 24 months in Municipality of Comodoro Rivadavia city, Systems Engineer Juridical Informatics, Technical Leader.
-\EducationEntry{Municipalidad de Comodoro Rivadavia}{2004-2006}{Systems Engineer Juridical Informatics, Technical Leader}
+\WorkEntry{Municipalidad de Comodoro Rivadavia}{2004-2006}{Systems Engineer Juridical Informatics, Technical Leader}
 {Líder Técnico en Proyecto de Digesto Legislativo Municipal en Asesoría letrada de la Municipalidad de Comodoro Rivadavia.}
 
 \sepspace
 
 %2004-2005 Teacher Mathematic Teacher, Software Teacher, Computation Teacher.
-\EducationEntry{Profesor}{2004-2005}{Teacher Mathematic Teacher, Software Teacher, Computation Teacher}
+\WorkEntry{Profesor}{2004-2005}{Teacher Mathematic Teacher, Software Teacher, Computation Teacher}
 {Profesor: 
 1- Computación I (Basic Informatic) - ISIS (Instituto terciario privado); 
 2- Computación II (Aplicaciones de Software) - ISIS (Instituto terciario privado); 
@@ -227,20 +240,37 @@ Informático Forense para el tribunal tercero de Comodoro Rivadavia}
 \sepspace
 
 %2000-2003 - DeSoft Development of Software
-\EducationEntry{DeSoft}{2000-2003}{Developer, Technical Leader}{
+\WorkEntry{DeSoft}{2000-2003}{Developer, Technical Leader}{
 Desarrollador y Líder técnico en proyectos de desarrollo de software para empresas de terserización petrolera y máquinas viales.}
 
 \sepspace
 
-%%% Skills
+%%% Certifications
+%%% ------------------------------------------------------------
+\NewPart{Certificaciones}{}
+
+\CertificatesEntry{\large{\textbf{ScrumMaster}}}{}
+\CertificatesEntry{}{
+Certified ScrumMaster by SCRUM ALLIANCE.\newline
+URL ScrumMaster profile: \url{https://www.scrumalliance.org/community/profile/dpalminio}
+}
+\sepspace
+
+%%% Courses
+%%% ------------------------------------------------------------
+\NewPart{Cursos de Gestión y Organización}{}
+
+\CoursesEntry{Curso de Certified Scrum Master}{2015}{Kleer, Cba.-Arg.}{}
+\CoursesEntry{Especialización en Project Management}{2010}{UTNFRBA, Bs.As.-Arg.}{}
+\CoursesEntry{Carrera de Project Management}{2008}{IAAP, PMI, Bs.As.-Arg.}{}
+\CoursesEntry{Estructuración de Proyectos PM01.}{2007}{IAAP, Bs.As.-Arg.}{}
+\CoursesEntry{Creación de Cooperativas.}{2012}{INAES, Cba.-Arg.}{}
+
+\sepspace
+
+%%% Skills - Otras Experiencias y Conocimientos
 %%% ------------------------------------------------------------
 \NewPart{Otras Experiencias y Conocimientos}{}
-
-\SkillsEntry{{\textbf{Certificaciones}}}{}
-\SkillsEntry{}{
-\large{\textbf{Certified ScrumMaster por SCRUM ALLIANCE}}\newline
-          https://www.scrumalliance.org/community/profile/dpalminio
-}
 
 \sepspace
 
