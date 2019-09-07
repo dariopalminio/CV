@@ -32,11 +32,18 @@
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{amsmath,amsfonts,amsthm}     % Math packages
 \usepackage{graphicx}                    % Enable pdflatex
+\usepackage{subfigure} % subfiguras
+\usepackage{wrapfig} % used in figures
 \usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
 \usepackage{geometry}
 	\textheight=700px                    % Saving trees ;-)
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{placeins} % Command to control the position of floating images. Use by \FloatBarrier command.
+
+
+% Image location (all images into document should be in this location)
+\graphicspath{ {images/} } 
 
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
@@ -70,6 +77,12 @@
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\BookEntry}[1]{
+\noindent % Indentation
+
+}    % Entry for book
+
 
 \newcommand{\CertificatesEntry}[2]{      % Same as \CertificatesEntry
 		\noindent\hangindent=2em\hangafter=0 % Indentation
@@ -174,6 +187,31 @@ Antes de ser ingeniero, estudié Analista de Sistemas (en UNPSJB de Argentina, C
 {Técnico mecánico eletricista}
 
 Hice mi formación secundaria, de nivel medio, en una escuela de educación técnica (en ENET de Argentina, Chubut) donde me recibí de Electromecánico, una combinación de electricista, electrónico y mecánico. Esto me dio una base científico-técnica útil para abordar problemas desde una perspectiva científica y técnica.
+\sepspace
+
+%%% Autor of Books
+%%% ------------------------------------------------------------
+\NewPart{Autor}{}
+%%% Book
+\BookEntry{}{
+\indent
+Scrum en Ingeniería de Software, 2018 (Edición Chile, Argentina).
+\begin{wrapfigure}[5]{l}{0.25\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{tapa_libro_scrum_2}
+\end{wrapfigure}
+\FloatBarrier % Command to control the position of floating images. With its, I can get the figures not to be pushed to the end of the document.
+% El comando FloatBarrier es usado aqui para que la imagen se clave en este lugar y que no sea acarreada al final del documento.
+\indent
+
+}
+\sepspace
+\sepspace
+\sepspace
+\sepspace
+\sepspace
+\sepspace\sepspace
+\sepspace
 \sepspace
 
 %%% Work experience
